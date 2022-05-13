@@ -15,6 +15,7 @@ private:
   sf::Texture skin;
   sf::Font font;
   sf::Text name;
+  sf::Text Mana;
   sf::Text Description;
   sf::RenderStates state;
   bool agrandi=false;
@@ -28,6 +29,8 @@ private:
 public:
   Card();
   Card(std::string nom,std::string descr,std::string path_to_image);
+  void setMana(std::string mana);
+  int cost();
   void setDescription(std::string desc);
   void setImage(std::string path_to_image);
   void setName(std::string nom);

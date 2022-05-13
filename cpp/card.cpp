@@ -83,9 +83,21 @@ Card::Card(){
   }
   name.setFont(font);
   Description.setFont(font);
+  Mana.setFont(font);
   this->setOrigin(this->getGlobalBounds().width/2,this->getGlobalBounds().height/2);
 }
 
+void Card::setMana(std::string mana){
+  Mana.setString(mana);
+  Mana.setCharacterSize(20);
+  Mana.setFillColor(sf::Color::Black);
+  Mana.setPosition(this->getX()-coox,this->getY()-cooy+15.f);
+}
+
+int Card::cost(){
+  string mana = Mana.getString();
+  return std::stoi(mana);
+}
 
 void Card::setPosition(sf::Vector2f newPos){
   sf::Vertex* BackGround= &GlobalCard[0];
@@ -133,7 +145,7 @@ void Card::setImage(std::string path_to_image){
 void Card::setName(std::string nom){
   name.setString(nom);
   name.setCharacterSize(20);
-  name.setFillColor(sf::Color::Red);
+  name.setFillColor(sf::Color::Black);
   name.setOrigin(name.getLocalBounds().width/2,name.getLocalBounds().height/2);
   name.setPosition(this->getX()-coox+(taille-10.f)/2,this->getY()-cooy+15.f);
 }
