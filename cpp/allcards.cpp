@@ -24,8 +24,6 @@ static int callback(void* NotUsed, int argc, char** argv, char** azColName){
     intermediaire->insert(intermediaire->end(),donnee);
   }
 
-  cout<<endl;
-
   return 0;
 }
 

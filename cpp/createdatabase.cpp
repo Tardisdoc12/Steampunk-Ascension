@@ -124,7 +124,5 @@ static int callback(void* NotUsed, int argc, char** argv, char** azColName){
     car->insert(car->end(),donnee);
   }
 
-  cout<<endl;
-
   return 0;
 }
