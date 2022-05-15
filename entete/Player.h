@@ -6,7 +6,7 @@
 #include <vector>
 #include "life.h"
 #include "Card.h"
-#include "allcards.h"
+#include "Deck.h"
 using namespace std;
 using namespace sf;
 
@@ -20,7 +20,7 @@ private:
   sf::Texture skin;
   sf::Sprite joueur;
   std::vector<Card> Plateformer;
-  std::vector<Card> Deck;
+  Deck deck_fight;
   std::vector<Card> Hand;
   std::vector<Card> GY;
   std::vector<Card> Defausse;

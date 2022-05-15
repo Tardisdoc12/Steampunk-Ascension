@@ -5,21 +5,20 @@
 #include <cstdlib>
 #include <vector>
 #include "card.h"
+#include "allcards.h"
 using namespace std;
 using namespace sf;
 
 #ifndef __Deck_h__
 #define __Deck_h__
-class Deck{
+class Deck:public sf::Drawable, public sf::Transformable{
 private:
-  vector<Card> deck;
-  vector<Card> main;
-  vector<Card> defausse;
-
+  vector<Card> deck_base;
 public:
   Deck();
+  std::vector<Card> createDeck(string classType);
   void melangeDeck();
-  void Pioche();
+  void Pioche(int number);
   void VoirLeDeck();
   void EnvoiLaMain();
   void rempliLeDeck();
