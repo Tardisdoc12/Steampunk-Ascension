@@ -3,12 +3,13 @@
 
 Ennemy::Ennemy(int ptDeVie){
   ennemi_life.initialise(ptDeVie);
-  if(!im.loadFromFile("../Sprite/test.jpg")){
+  if(!im.loadFromFile("../Sprite/ennemy3.png")){
     cout<<"ERROR_FAIL"<<endl;
   }
   ennemi.setTexture(im);
+  ennemi.setScale({0.8f,0.8f});
   ennemi.setOrigin({ennemi.getLocalBounds().width/2,ennemi.getLocalBounds().height/2});
-  ennemi_life.setPosition({ennemi.getPosition().x-ennemi.getLocalBounds().width/2,float(ennemi.getPosition().y+ennemi.getLocalBounds().height*0.6)});
+  ennemi_life.setPosition({ennemi.getLocalBounds().width/2,float(ennemi.getLocalBounds().height*0.5f)});
 }
 
 void Ennemy::setPosition(sf::Vector2f Pos){

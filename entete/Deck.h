@@ -22,6 +22,7 @@ public:
   void VoirLeDeck();
   void EnvoiLaMain();
   void rempliLeDeck();
-  virtual void draw(sf::RenderTarget & target,sf::RenderStates state) const;
+  ~Deck();
+  //virtual void draw(sf::RenderTarget & target,sf::RenderStates state) const;
 };
 #endif

@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <vector>
 #include "life.h"
-#include "Card.h"
-#include "Deck.h"
+#include "card.h"
+//#include "Deck.h"
 using namespace std;
 using namespace sf;
 
@@ -19,8 +19,8 @@ private:
   std::string class_player="None";
   sf::Texture skin;
   sf::Sprite joueur;
-  std::vector<Card> Plateformer;
-  Deck deck_fight;
+  std::vector<Card> deck_Plateformer;
+  //Deck deck_fight;
   std::vector<Card> Hand;
   std::vector<Card> GY;
   std::vector<Card> Defausse;

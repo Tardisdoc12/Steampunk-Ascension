@@ -11,9 +11,10 @@ static int callback(void * NotUsed, int argc, char** argv, char** azColName);
 class carddata{
 private:
   Card intermediaire2;
-  std::vector<Card> everyCards;
+  //std::vector<Card> everyCards;
   Card currentCard;
 public:
+  std::vector<Card> everyCards;
   carddata();
   std::vector<string> selectData(const char* s);
   std::vector<Card> everyCardReturn();

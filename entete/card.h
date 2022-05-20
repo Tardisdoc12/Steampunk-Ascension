@@ -11,8 +11,10 @@ using namespace std;
 
 class Card: public sf::Drawable, public sf::Transformable{
 private:
-  sf::VertexArray GlobalCard;
+  sf::Texture image;
+  sf::Sprite imageSprite;
   sf::Texture skin;
+  sf::Sprite Card_skin;
   sf::Font font;
   sf::Text name;
   sf::Text Mana;
@@ -20,15 +22,12 @@ private:
   sf::RenderStates state;
   bool agrandi=false;
   bool drag=false;
-  float coox=0.f;
-  float cooy=0.f;
-  float testx,testy;
   float taille;
+  int press=0;
   int block=0;
-  bool test=false;
 public:
   Card();
-  Card(std::string nom,std::string descr,std::string path_to_image);
+  //Card(std::string nom,std::string descr,std::string path_to_image);
   void setMana(std::string mana);
   int cost();
   void setDescription(std::string desc);
@@ -43,8 +42,8 @@ public:
   float getX();
   float getY();
   void agrandisouris(sf::RenderWindow & window);
-  void dragAndDrop(sf::RenderWindow & window/*,sf::Event event*/);
-  void always(sf::RenderWindow & window);
+  void dragAndDrop(sf::RenderWindow & window);
+  void follow(sf::RenderWindow & window);
   string getName();
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
 };

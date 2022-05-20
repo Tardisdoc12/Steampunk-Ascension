@@ -6,8 +6,8 @@ CFLAGS3 = -lsqlite3
 	g++ -o $@ -c $< $(CFLAGS2) $(CFLAGS3)
 
 
-game: allcards.o Player.o ennemi.o life.o card.o Steampunk_Tower.o createdatabase.o
-	g++ allcards.o Player.o ennemi.o life.o card.o Steampunk_Tower.o -o Steampunk_Tower -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -lsqlite3
+game: Deck.o allcards.o Player.o ennemi.o life.o card.o Steampunk_Tower.o createdatabase.o
+	g++ Deck.o allcards.o Player.o ennemi.o life.o card.o Steampunk_Tower.o -o Steampunk_Tower -lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio -lsqlite3
 	g++ createdatabase.o -o create -lsqlite3
 	./create
 	rm *.o

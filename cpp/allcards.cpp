@@ -69,6 +69,6 @@ void carddata::agrandisouris(sf::RenderWindow & window){
 
 void carddata::always(sf::RenderWindow & window){
   for (int i=0;i<everyCards.size();i++){
-    everyCards[i].always(window);
+    everyCards[i].follow(window);
   }
 }

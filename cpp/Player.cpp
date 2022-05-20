@@ -51,7 +51,7 @@ void Player::Notfight(){
 }
 
 void Player::setClassType(std::string classType){
-  deck_fight.createDeck(classType);
+  //deck_fight.createDeck(classType);
   //set the skin of the right class
   //set the mana of the class
 }
