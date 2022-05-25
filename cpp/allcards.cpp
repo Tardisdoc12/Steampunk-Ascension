@@ -31,21 +31,29 @@ carddata::carddata(){
   sqlite3* DB;
 
   const char* dir = "../DataBase/Cards.db";
-
-  std::vector<std::string> dataCards=selectData(dir); // A CHANGER CAR CE N'EST PLUS BON
+  string data="";
+  std::vector<std::string> dataCards=selectData(dir);
+  for (int i=0;i<dataCards.size();i+=5){
+    everyCards.insert(everyCards.end(),intermediaire2);
+  }
   for (int i=0;i<dataCards.size();i++){
-    if((i==0)||(i%4==0)){
+    data+=dataCards[i];
+    if(i%5==0){
 
     }
-    else if((i!=0)&&(i%2==0)&&(i%4!=0)){
-      intermediaire2.setDescription(dataCards[i]);
+    else if(i%5==1){
+      everyCards[(i-1)/5].setName(data);
     }
-    else if((i!=0)&&((i-1)%4==0)){
-      intermediaire2.setName(dataCards[i]);
+    else if(i%5==2){
+      everyCards[(i-2)/5].setType(data);
     }
-    else if((i!=0)&&((i-1)%2==0)&&((i-1)%4!=0)){
-      everyCards.insert(everyCards.end(),intermediaire2);
+    else if(i%5==3){
+      everyCards[(i-3)/5].setDescription(data);
     }
+    else if(i%5==4){
+      everyCards[(i-4)/5].setMana(data);
+    }
+    data="";
   }
 
 }

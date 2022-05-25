@@ -77,9 +77,10 @@ static int insertData(const char* s){
 
   int exit = sqlite3_open(s,&DB);
 
-  string sql("INSERT INTO CARDS (NAME,TYPE, EFFECT, MANA) VALUES('Test',1, 'Voici l effet', 3);"
+  string sql("INSERT INTO CARDS (NAME,TYPE, EFFECT, MANA) VALUES('Test',2, 'Voici l effet', 3);"
              "INSERT INTO CARDS(NAME,TYPE, EFFECT, MANA) VALUES('Test2',1, 'vol, lien de vie',4);"
-             "INSERT INTO CARDS (NAME,TYPE, EFFECT, MANA) VALUES('Griffes',0,'deal 5 damage',0);");
+             "INSERT INTO CARDS (NAME,TYPE, EFFECT, MANA) VALUES('Griffes',0,'deal 5 damage',0);"
+             "INSERT INTO CARDS (NAME,TYPE,EFFECT,MANA) VALUES('Etherium',3,'deal 2x3 damage',2)");
 
   exit = sqlite3_exec(DB,sql.c_str(), NULL, 0, &messageError);
 

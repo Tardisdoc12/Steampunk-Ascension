@@ -26,13 +26,21 @@ private:
   int press=0;
   int block=0;
 public:
+  // on créer la carte------------------------------------------------------------------------------------------------------
   Card();
-  //Card(std::string nom,std::string descr,std::string path_to_image);
-  void setMana(std::string mana);
+
+  //On récupère des données de la carte--------------------------------------------------------------------------------------
   int cost();
+  string getName();
+
+  //on met en place la carte------------------------------------------------------------------------------------------------
+  void setMana(std::string mana);
   void setDescription(std::string desc);
   void setImage(std::string path_to_image);
   void setName(std::string nom);
+  void setType(std::string type);
+
+  //transformation de la carte----------------------------------------------------------------------------------------------
   void setPosition(sf::Vector2f newPos);
   void setScale(sf::Vector2f dim);
   void move(sf::Vector2f distance);
@@ -41,10 +49,13 @@ public:
   void setOrigin(float newX,float newY);
   float getX();
   float getY();
+
+  //Le gamplay---------------------------------------------------------------------------------------------------------------
   void agrandisouris(sf::RenderWindow & window);
   void dragAndDrop(sf::RenderWindow & window);
   void follow(sf::RenderWindow & window);
-  string getName();
+
+  // on dessine la carte----------------------------------------------------------------------------------------------------
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
 };
 

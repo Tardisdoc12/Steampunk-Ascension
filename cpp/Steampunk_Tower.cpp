@@ -32,7 +32,7 @@ int main(){
   carddata test;
   std::vector<Card> all=test.everyCardReturn();
   for (int h=0;h<test.everyCards.size();h++){
-    test.everyCards[h].setPosition({1000.f/2, 900.f/2});
+    test.everyCards[h].setPosition({100.f+150.f*h, 900.f/2});
   }
 
   while(window.isOpen()){
