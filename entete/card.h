@@ -11,6 +11,7 @@ using namespace std;
 
 class Card: public sf::Drawable, public sf::Transformable{
 private:
+  // Visuel de la carte--------------------------------------------------------------------------------------------------
   sf::Texture image;
   sf::Sprite imageSprite;
   sf::Texture skin;
@@ -19,12 +20,13 @@ private:
   sf::Text name;
   sf::Text Mana;
   sf::Text Description;
-  sf::RenderStates state;
+  // Variables de la carte-------------------------------------------------------------------------------------------------
   bool agrandi=false;
   bool drag=false;
   float taille;
-  int press=0;
-  int block=0;
+  int Type=0;
+  vector<string> DescriptionOrEffects;
+  vector<int> Effects;
 public:
   // on créer la carte------------------------------------------------------------------------------------------------------
   Card();
@@ -32,7 +34,7 @@ public:
   //On récupère des données de la carte--------------------------------------------------------------------------------------
   int cost();
   string getName();
-
+  void readEffects();
   //on met en place la carte------------------------------------------------------------------------------------------------
   void setMana(std::string mana);
   void setDescription(std::string desc);
@@ -54,6 +56,7 @@ public:
   void agrandisouris(sf::RenderWindow & window);
   void dragAndDrop(sf::RenderWindow & window);
   void follow(sf::RenderWindow & window);
+  vector<int> getEffect();
 
   // on dessine la carte----------------------------------------------------------------------------------------------------
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;

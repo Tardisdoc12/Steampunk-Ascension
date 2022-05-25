@@ -1,4 +1,6 @@
 #include "card.h"
+#include<iterator>
+#include<sstream>
 
 Card::Card(){
   if(!skin.loadFromFile("../Sprite/card.png")){
@@ -135,6 +137,7 @@ string Card::getName(){
 }
 
 void Card::setType(std::string type){
+  Type=std::stoi(type);
   if (type=="1"){
     if(!skin.loadFromFile("../Sprite/card_mana2.png")){
       cout<<"IMAGE_LOAD_FAILED"<<endl;
@@ -163,4 +166,39 @@ void Card::setType(std::string type){
     Card_skin.setTexture(skin);
     Card_skin.setOrigin(Card_skin.getLocalBounds().width/2,Card_skin.getLocalBounds().height/2);
   }
+}
+
+void Card::readEffects(){
+  string effet=Description.getString();
+  istringstream iss(effet);
+  copy(istream_iterator<string>(iss),istream_iterator<string>(),back_inserter(DescriptionOrEffects));
+}
+
+vector<int> Card::getEffect(){
+  for (int i=0;i<DescriptionOrEffects.size();i++){
+    if (Type!=2){
+      if((DescriptionOrEffects[i]=="Deal")||(DescriptionOrEffects[i]=="deal")){
+        Effects.insert(Effects.end(),std::stoi(DescriptionOrEffects[i+1]));
+      }
+      else{
+        Effects.insert(Effects.end(),0);
+      }
+      if((DescriptionOrEffects[i]=="armor")){
+        Effects.insert(Effects.end(),std::stoi(DescriptionOrEffects[i-1]));
+      }
+      else{
+        Effects.insert(Effects.end(),0);
+      }
+      if ((DescriptionOrEffects[i]=="mana")){
+        Effects.insert(Effects.end(),std::stoi(DescriptionOrEffects[i-1]));
+      }
+      else{
+        Effects.insert(Effects.end(),0);
+      }
+    }
+    else{
+
+    }
+  }
+  return Effects;
 }
