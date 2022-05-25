@@ -2,7 +2,7 @@
 #include "allcards.h"
 #include "Deck.h"
 
-Player::Player(carddata & allcards){
+Player::Player(){
   isInFight=false;
   if(!skin.loadFromFile("../Sprite/test1.jpg")){
     cout<<"ERROR_FAIL"<<endl;
@@ -10,7 +10,6 @@ Player::Player(carddata & allcards){
   joueur.setTexture(skin);
   joueur.setOrigin(joueur.getLocalBounds().width/2,joueur.getLocalBounds().height/2);
   joueur.setScale({0.3f,0.3f});
-  deck_fight.createDeck("Scientist",allcards);
 }
 
 void Player::initialiseLife(int Vie){
@@ -36,7 +35,6 @@ void Player::setPosition(sf::Vector2f Pos){
   joueur_life.setPosition({joueur.getPosition().x-float(joueur.getGlobalBounds().width*0.36f),float(joueur.getPosition().y+joueur.getGlobalBounds().height*0.6)});
 }
 
-
 void Player::draw(sf::RenderTarget & target,sf::RenderStates state) const{
   //state.transform *= getTransform();
   target.draw(joueur,state);
@@ -53,8 +51,8 @@ void Player::Notfight(){
   isInFight=false;
 }
 
-void Player::setClassType(std::string classType){
-  //deck_fight.createDeck(classType);
+void Player::setClassType(std::string classType,carddata & allcards){
+  deck_fight.createDeck(classType,allcards);
   //set the skin of the right class
   //set the mana of the class
 }

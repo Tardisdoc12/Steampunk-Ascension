@@ -26,10 +26,10 @@ private:
   std::vector<Card> Defausse;
   bool isInFight=false;
 public:
-  Player(carddata & allcards);
+  Player();
   void initialiseLife(int Vie);
   void deplacement();
-  void setClassType(string classType);
+  void setClassType(string classType,carddata & allcards);
   void setPosition(sf::Vector2f Pos);
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
   void Onfight();

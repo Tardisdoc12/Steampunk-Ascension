@@ -32,10 +32,11 @@ int main(){
     test.everyCards[h].setPosition({100.f+150.f*h, 900.f/2});
   }
 
-  Player moi(test);
+  Player moi;
+  moi.setClassType("scientist",test);
   moi.initialiseLife(90);
   moi.setPosition({300.f,300.f});
-  
+
   while(window.isOpen()){
     Event event;
     while(window.pollEvent(event)){
