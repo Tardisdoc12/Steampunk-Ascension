@@ -6,7 +6,7 @@
 #include <vector>
 #include "life.h"
 #include "card.h"
-//#include "Deck.h"
+#include "Deck.h"
 using namespace std;
 using namespace sf;
 
@@ -20,13 +20,13 @@ private:
   sf::Texture skin;
   sf::Sprite joueur;
   std::vector<Card> deck_Plateformer;
-  //Deck deck_fight;
+  Deck deck_fight;
   std::vector<Card> Hand;
   std::vector<Card> GY;
   std::vector<Card> Defausse;
   bool isInFight=false;
 public:
-  Player();
+  Player(carddata & allcards);
   void initialiseLife(int Vie);
   void deplacement();
   void setClassType(string classType);

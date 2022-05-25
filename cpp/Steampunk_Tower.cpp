@@ -25,16 +25,17 @@ int main(){
   Ennemy Op(90);
   Op.setScale({0.3f,0.3f});
   Op.setPosition({500.f,600.f});
-  Player moi;
-  moi.initialiseLife(90);
-  moi.setPosition({300.f,300.f});
+
 
   carddata test;
-  std::vector<Card> all=test.everyCardReturn();
   for (int h=0;h<test.everyCards.size();h++){
     test.everyCards[h].setPosition({100.f+150.f*h, 900.f/2});
   }
 
+  Player moi(test);
+  moi.initialiseLife(90);
+  moi.setPosition({300.f,300.f});
+  
   while(window.isOpen()){
     Event event;
     while(window.pollEvent(event)){

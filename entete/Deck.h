@@ -11,12 +11,12 @@ using namespace sf;
 
 #ifndef __Deck_h__
 #define __Deck_h__
-class Deck:public sf::Drawable, public sf::Transformable{
+class Deck/*:public sf::Drawable, public sf::Transformable*/{
 private:
   vector<Card> deck_base;
 public:
   Deck();
-  std::vector<Card> createDeck(string classType);
+  void createDeck(string classType,carddata & allcards);
   void melangeDeck();
   void Pioche(int number);
   void VoirLeDeck();

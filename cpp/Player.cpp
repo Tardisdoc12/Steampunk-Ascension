@@ -1,6 +1,8 @@
 #include "Player.h"
+#include "allcards.h"
+#include "Deck.h"
 
-Player::Player(){
+Player::Player(carddata & allcards){
   isInFight=false;
   if(!skin.loadFromFile("../Sprite/test1.jpg")){
     cout<<"ERROR_FAIL"<<endl;
@@ -8,6 +10,7 @@ Player::Player(){
   joueur.setTexture(skin);
   joueur.setOrigin(joueur.getLocalBounds().width/2,joueur.getLocalBounds().height/2);
   joueur.setScale({0.3f,0.3f});
+  deck_fight.createDeck("Scientist",allcards);
 }
 
 void Player::initialiseLife(int Vie){
