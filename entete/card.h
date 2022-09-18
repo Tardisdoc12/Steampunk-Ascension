@@ -35,6 +35,7 @@ public:
   int cost();
   string getName();
   void readEffects();
+  
   //on met en place la carte------------------------------------------------------------------------------------------------
   void setMana(std::string mana);
   void setDescription(std::string desc);
