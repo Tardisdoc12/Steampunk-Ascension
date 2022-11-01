@@ -10,6 +10,8 @@
 #include "ennemi.h"
 #include "Player.h"
 #include "allcards.h"
+#include "map_generator.h"
+#include "Floor.h"
 using namespace std;
 using namespace sf;
 
@@ -21,21 +23,31 @@ int main(){
   window.create(sf::VideoMode(gamewidth,gameheight), "Steampunk Tower", Style::Titlebar|sf::Style::Resize|sf::Style::Close);
   window.setVerticalSyncEnabled(true);
 
-
+  /*
   Ennemy Op(90);
   Op.setScale({0.3f,0.3f});
   Op.setPosition({500.f,600.f});
-
+  */
 
   carddata test;
   for (int h=0;h<test.everyCards.size();h++){
     test.everyCards[h].setPosition({100.f+150.f*h, 900.f/2});
   }
-
+  /*
   Player moi;
   moi.setClassType("scientist",test);
   moi.initialiseLife(90);
   moi.setPosition({300.f,300.f});
+  */
+
+  MapGenerator floor_1(1);
+  floor_1.generate_floor();
+  vector<int> intermediaire_floor=floor_1.return_floor();
+  Floor map;
+  int n=intermediaire_floor.size()/10;
+  if (!map.load("../Sprite/tileset.png", sf::Vector2u(16, 16), intermediaire_floor, n, 10)){
+    return -1;
+  }
 
   while(window.isOpen()){
     Event event;
@@ -45,18 +57,19 @@ int main(){
         break;
       }
     }
-    moi.deplacement();
+    //moi.deplacement();
     test.draganddrop(window);
     test.agrandisouris(window);
     test.always(window);
 
     window.clear(Color::Black);
-    window.draw(moi);
-    window.draw(Op);
+    //window.draw(moi);
+    //window.draw(Op);
     for(int i=0;i<test.everyCards.size();i++){
       window.draw(test.everyCards[i]);
     }
-    //window.draw(test);
+    window.draw(map);
+    //cout<<"test_3 reussi"<<endl;
     window.display();
   }
   return EXIT_FAILURE;
