@@ -29,15 +29,21 @@ private:
   int room_max;
   int room_i=1;
   int n_floor;
+  int n_topTobot=2;
   int n_room;
   room test2;
   vector<int> floor_i;
+  vector<int> top_floor;
+  vector<int> bot_floor;
+  vector<string> direction_bot={"vide"};
   vector<string> direction={"droite"};
+  vector<string> direction_top={"vide"};
 public:
   MapGenerator(int _n_floor);
   void generate_floor();
   vector<int> return_floor();
   int return_n_room();
+  int return_topTobot();
 };
 
 

@@ -9,7 +9,7 @@ Player::Player(){
   }
   joueur.setTexture(skin);
   joueur.setOrigin(joueur.getLocalBounds().width/2,joueur.getLocalBounds().height/2);
-  joueur.setScale({0.3f,0.3f});
+  joueur.setScale({0.01f,0.01f});
 }
 
 void Player::initialiseLife(int Vie){
