@@ -7,6 +7,7 @@
 #include "life.h"
 #include "card.h"
 #include "Deck.h"
+#include "Floor.h"
 using namespace std;
 using namespace sf;
 
@@ -24,13 +25,17 @@ private:
   std::vector<Card> Hand;
   std::vector<Card> GY;
   std::vector<Card> Defausse;
+  sf::RectangleShape glob;
   bool isInFight=false;
 public:
   Player();
   void initialiseLife(int Vie);
-  void deplacement();
+  void deplacement(Floor & floor);
+  void move(sf::Vector2f distance);
+  sf::Vector2f getPosition();
   void setClassType(string classType,carddata & allcards);
   void setPosition(sf::Vector2f Pos);
+  sf::FloatRect getGlobalBounds();
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
   void Onfight();
   void Notfight();
