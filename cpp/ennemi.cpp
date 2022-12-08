@@ -1,9 +1,9 @@
-#include "ennemi.h"
+#include "entete/ennemi.h"
 
 
 Ennemy::Ennemy(int ptDeVie){
   ennemi_life.initialise(ptDeVie);
-  if(!im.loadFromFile("../Sprite/ennemy3.png")){
+  if(!im.loadFromFile("C:/Users/laure/Desktop/Steampunk_Ascension/Sprite/ennemy3.png")){
     cout<<"ERROR_FAIL"<<endl;
   }
   ennemi.setTexture(im);
@@ -25,4 +25,8 @@ void Ennemy::draw(sf::RenderTarget & target,sf::RenderStates states) const{
   states.transform *= getTransform();
   target.draw(ennemi,states);
   target.draw(ennemi_life);
+}
+
+sf::Sprite Ennemy::returnSprite() const{
+    return ennemi;
 }

@@ -1,4 +1,4 @@
-#include"collision.h"
+#include"entete/collision.h"
 
 namespace Collision{
   bool collision_tuile(const sf::Rect<float> & rect,sf::Sprite & joueur){
@@ -24,6 +24,13 @@ namespace Collision{
   bool collision(sf::FloatRect& sideView,sf::FloatRect joueur){
     if(sideView.intersects(joueur)){
       return true;
+    }
+    return false;
+  }
+
+  bool collision(sf::Sprite ennemy,sf::Sprite & joueur){
+    if(ennemy.getGlobalBounds().intersects(joueur.getGlobalBounds())){
+        return true;
     }
     return false;
   }

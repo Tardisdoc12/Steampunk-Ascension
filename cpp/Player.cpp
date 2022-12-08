@@ -1,11 +1,11 @@
-#include "Player.h"
-#include "allcards.h"
-#include "Deck.h"
-#include "Floor.h"
-#include "collision.h"
+#include "entete/Player.h"
+//#include "allcards.h"
+#include "entete/Deck.h"
+#include "entete/Floor.h"
+#include "entete/collision.h"
 Player::Player(){
   isInFight=false;
-  if(!skin.loadFromFile("../Sprite/test1.jpg")){
+  if(!skin.loadFromFile("C:/Users/laure/Desktop/Steampunk_Ascension/Sprite/test1.jpg")){
     cout<<"ERROR_FAIL"<<endl;
   }
   joueur.setTexture(skin);
@@ -75,8 +75,14 @@ void Player::Notfight(){
   isInFight=false;
 }
 
-void Player::setClassType(std::string classType,carddata & allcards){
-  deck_fight.createDeck(classType,allcards);
+void Player::setClassType(std::string classType/*,carddata & allcards*/){
+  //deck_fight.createDeck(classType,allcards);
   //set the skin of the right class
   //set the mana of the class
+}
+
+void Player::EnterBattle(Ennemy & ennemy){
+    if(Collision::collision(ennemy.returnSprite(),joueur)){
+        this->Onfight();
+    }
 }

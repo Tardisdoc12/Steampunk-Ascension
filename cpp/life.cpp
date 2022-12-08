@@ -1,4 +1,4 @@
-#include "life.h"
+#include "entete/life.h"
 
 life::life(int ptDeVie){
   green.setSize({longueur,hauteur});
@@ -9,7 +9,7 @@ life::life(int ptDeVie){
   red.setFillColor(sf::Color::Black);
   red.setOutlineColor(sf::Color::White);
   red.setOutlineThickness(2.5f);
-  if(!font.loadFromFile("../Font/StarshipRegular.otf")){
+  if(!font.loadFromFile("C:/Users/laure/Desktop/Steampunk_Ascension/Font/StarshipRegular.otf")){
     cout<<"ERROR_FAIL"<<endl;
   }
   counter.setFont(font);
@@ -27,7 +27,7 @@ life::life(){
   red.setFillColor(sf::Color::Black);
   red.setOutlineColor(sf::Color::White);
   red.setOutlineThickness(2.5f);
-  if(!font.loadFromFile("../Font/StarshipRegular.otf")){
+  if(!font.loadFromFile("C:/Users/laure/Desktop/Steampunk_Ascension/Font/StarshipRegular.otf")){
     cout<<"ERROR_FAIL"<<endl;
   }
   counter.setFont(font);

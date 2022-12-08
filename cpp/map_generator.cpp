@@ -1,4 +1,4 @@
-#include "map_generator.h"
+#include "entete/map_generator.h"
 using namespace sf;
 
 MapGenerator::MapGenerator(int _n_floor){

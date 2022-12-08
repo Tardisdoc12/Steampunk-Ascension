@@ -5,14 +5,13 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#include "card.h"
-#include "life.h"
-#include "ennemi.h"
-#include "Player.h"
-#include "allcards.h"
-#include "map_generator.h"
-#include "Floor.h"
-#include "view.h"
+#include "entete/life.h"
+#include "entete/ennemi.h"
+#include "entete/Player.h"
+#include "entete/allcard.h"
+#include "entete/map_generator.h"
+#include "entete/Floor.h"
+#include "entete/view.h"
 using namespace std;
 using namespace sf;
 
@@ -29,29 +28,29 @@ int main(){
   sf::Vector2u TileSize({16,16});
   camera game(size,center,TileSize,window);
 
-  /*
+
   Ennemy Op(90);
   Op.setScale({0.3f,0.3f});
-  Op.setPosition({500.f,600.f});
-  */
+  Op.setPosition({200.f,300.f});
 
-  carddata test;
-  for (int h=0;h<test.everyCards.size();h++){
-    test.everyCards[h].setPosition({100.f+150.f*h, 900.f/2});
+  std::string file="C:/Users/laure/Desktop/Steampunk_Ascension/DataBase/Data.txt";
+  allcard test(file);
+  if(!test.load(file)){
+      return -1;
   }
-
+  test.setPosition(sf::Vector2f({200.f,500.f}));
   Player moi;
-  moi.setClassType("scientist",test);
+  moi.setClassType("scientist"/*,test*/);
   moi.initialiseLife(90);
   moi.setPosition({50.f,16*9.f});
 
 
-  MapGenerator floor_1(3);
+  MapGenerator floor_1(1);
   floor_1.generate_floor();
   vector<int> intermediaire_floor=floor_1.return_floor();
   Floor map;
   map.setPosition(0,0);
-  if (!map.load("../Sprite/tileset.png", sf::Vector2u(16, 16), intermediaire_floor, 18*floor_1.return_n_room(), 30)){
+  if (!map.load("C:/Users/laure/Desktop/Steampunk_Ascension/Sprite/tileset.png", sf::Vector2u(16, 16), intermediaire_floor, 18*floor_1.return_n_room(), 30)){
     return -1;
   }
 
@@ -66,17 +65,13 @@ int main(){
     moi.deplacement(map);
     test.draganddrop(window);
     test.agrandisouris(window);
-    test.always(window);
+    test.always();
     game.move_cam(moi,map);
     window.clear(Color::Black);
     window.draw(moi);
-    //window.draw(Op);
-    for(int i=0;i<test.everyCards.size();i++){
-      window.draw(test.everyCards[i]);
-    }
     window.draw(map);
-    game.setView1(window);
-    //cout<<"test_3 reussi"<<endl;
+    window.draw(Op);
+    test.draw(window);
     window.display();
   }
   return EXIT_FAILURE;

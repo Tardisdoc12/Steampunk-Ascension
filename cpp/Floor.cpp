@@ -1,4 +1,4 @@
-#include"Floor.h"
+#include"entete/Floor.h"
 using namespace sf;
 bool Floor::load(const std::string& tileset, sf::Vector2u tileSize, vector<int> tiles, unsigned int width, unsigned int height){
   // on charge la texture du tileset

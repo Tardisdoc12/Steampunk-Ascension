@@ -14,6 +14,8 @@ namespace Collision{
   bool collision(VertexArray array,Sprite & joueur,sf::Vector2u dim);
 
   bool collision(sf::FloatRect& sideView,sf::FloatRect joueur);
+
+  bool collision(sf::Sprite ennemy,sf::Sprite & Joueur);
 }
 
 #endif

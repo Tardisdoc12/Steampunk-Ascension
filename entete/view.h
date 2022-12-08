@@ -1,8 +1,8 @@
 #include<SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
 #include<iostream>
-#include"Player.h"
-#include"Floor.h"
+#include"entete/Player.h"
+#include"entete/Floor.h"
 
 #ifndef __view_h__
 #define __view_h__

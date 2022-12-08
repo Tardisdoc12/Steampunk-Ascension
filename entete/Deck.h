@@ -4,8 +4,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#include "card.h"
-#include "allcards.h"
+#include "entete/card.h"
+//#include "allcards.h"
 using namespace std;
 using namespace sf;
 
@@ -16,7 +16,7 @@ private:
   vector<Card> deck_base;
 public:
   Deck();
-  void createDeck(string classType,carddata & allcards);
+  void createDeck(string classType/*,carddata & allcards*/);
   void melangeDeck();
   void Pioche(int number);
   void VoirLeDeck();

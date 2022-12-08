@@ -4,10 +4,11 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#include "life.h"
-#include "card.h"
-#include "Deck.h"
-#include "Floor.h"
+#include "entete/life.h"
+#include "entete/card.h"
+#include "entete/Deck.h"
+#include "entete/Floor.h"
+#include "entete/ennemi.h"
 using namespace std;
 using namespace sf;
 
@@ -33,11 +34,12 @@ public:
   void deplacement(Floor & floor);
   void move(sf::Vector2f distance);
   sf::Vector2f getPosition();
-  void setClassType(string classType,carddata & allcards);
+  void setClassType(string classType/*,carddata & allcards*/);
   void setPosition(sf::Vector2f Pos);
   sf::FloatRect getGlobalBounds();
   virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
   void Onfight();
   void Notfight();
+  void EnterBattle(Ennemy & ennemy);
 };
 #endif

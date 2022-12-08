@@ -4,8 +4,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#include "life.h"
-#include "card.h"
+#include "entete/life.h"
+#include "entete/card.h"
 using namespace std;
 
 #ifndef __ennemi_h__
@@ -23,6 +23,7 @@ public:
   void setPosition(sf::Vector2f Pos);
   void setScale(sf::Vector2f Taille);
   virtual void draw(sf::RenderTarget & target,sf::RenderStates states) const;
+  Sprite returnSprite() const;
 };
 
 #endif

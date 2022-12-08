@@ -1,6 +1,6 @@
-#include "view.h"
-#include "collision.h"
-#include "Floor.h"
+#include "entete/view.h"
+#include "entete/collision.h"
+#include "entete/Floor.h"
 using namespace std;
 using namespace sf;
 
