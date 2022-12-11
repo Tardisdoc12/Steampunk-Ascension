@@ -20,9 +20,9 @@ private:
     sf::Vector2u tileSize2;
     sf::FloatRect contour;
     //vector<sf::Sprite> globalBoundary();
-public:
+public: //the loading of the global level
     bool load(const std::string& tileset, sf::Vector2u tileSize, vector<int> tiles, unsigned int width, unsigned int height);
-    sf::VertexArray return_floor();
+    sf::VertexArray return_floor(); //return the level
     sf::VertexArray return_right();
     sf::VertexArray return_left();
     sf::Vector2u getTileSize();

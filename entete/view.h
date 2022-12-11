@@ -16,11 +16,11 @@ private:
 public:
   camera();
   camera(sf::Vector2f _size,sf::Vector2f _position,sf::Vector2u TileSize,sf::RenderWindow & window);
-  void setSize(sf::Vector2f _size);
-  void setPosition(sf::Vector2f _position);
+  void setSize(sf::Vector2f _size);//define the size
+  void setPosition(sf::Vector2f _position);//define the position of the cam
   void setEdge(sf::Vector2u TileSize);
-  void move_cam(Player & player,Floor& map);
+  void move_cam(Player & player,Floor& map); //the movement of the view with the player
 
-  void setView1(sf::RenderWindow & window);
+  void setView1(sf::RenderWindow & window); //setting the view
 };
 #endif

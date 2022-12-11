@@ -12,7 +12,7 @@ private:
   int tile;
 public:
   room();
-  void room_left_1();
+  void room_left_1(); //define each room
   void room_right_1();
   void room_middle_1();
   void room_top_left_1();

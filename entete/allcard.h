@@ -12,7 +12,7 @@ private:
     std::vector<Card> allCards;
     Card Temporary;
 public:
-    allcard(std::string & file);
+    allcard(std::string & file); //define all the card of the game
     bool load(std::string & file);
     void draw(sf::RenderWindow & window);
     void setPosition(sf::Vector2f position);

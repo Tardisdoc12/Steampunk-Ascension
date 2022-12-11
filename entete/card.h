@@ -18,11 +18,11 @@ private:
     sf::Texture card_back;
     sf::Texture card_image;
     sf::RectangleShape test;
-    arrow point;
+    arrow point; //to help the player to target an ennemy with a card
     bool drag;
     bool agrandi;
     bool resize;
-public:
+public: //the class card to play the game in fight or plaformer mode
     //--------Definition :
     Card();
     bool load();

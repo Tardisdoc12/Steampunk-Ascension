@@ -21,13 +21,13 @@ private:
   float hauteur=10.f;
 public:
   life();
-  void initialise(int ptDevie);
+  void initialise(int ptDevie); //define the number of life
   life(int ptDeVie);
-  void PerteDeVie(int degat);
-  void GainDeVie(int gain);
-  void setMaxVie(int i);
-  void setPosition(sf::Vector2f Pos);
-  virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
+  void PerteDeVie(int degat);//inflict damage
+  void GainDeVie(int gain);//gain life
+  void setMaxVie(int i);//set the maximum life
+  void setPosition(sf::Vector2f Pos);//define the position
+  virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;//drawing the life
 };
 
 #endif

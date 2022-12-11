@@ -19,11 +19,11 @@ private:
   life ennemi_life;//lifepoint;
   //class type--->quel type d'ennemi
 public:
-  Ennemy(int ptDeVie);
-  void setPosition(sf::Vector2f Pos);
-  void setScale(sf::Vector2f Taille);
-  virtual void draw(sf::RenderTarget & target,sf::RenderStates states) const;
-  Sprite returnSprite() const;
+  Ennemy(int ptDeVie); //create the ennemy
+  void setPosition(sf::Vector2f Pos);//define the position
+  void setScale(sf::Vector2f Taille);//define the scale
+  virtual void draw(sf::RenderTarget & target,sf::RenderStates states) const;//drawing the ennemy
+  Sprite returnSprite() const;//return the sprte of the ennemy
 };
 
 #endif

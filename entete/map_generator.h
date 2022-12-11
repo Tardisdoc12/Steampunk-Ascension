@@ -40,10 +40,10 @@ private:
   vector<string> direction_top={"vide"};
 public:
   MapGenerator(int _n_floor);
-  void generate_floor();
-  vector<int> return_floor();
-  int return_n_room();
-  int return_topTobot();
+  void generate_floor(); //generate the level
+  vector<int> return_floor(); //number of the floor between 1 and 3
+  int return_n_room();//number of room in the level
+  int return_topTobot();//number of way in the level
 };
 
 

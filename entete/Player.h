@@ -30,16 +30,16 @@ private:
   bool isInFight=false;
 public:
   Player();
-  void initialiseLife(int Vie);
-  void deplacement(Floor & floor);
-  void move(sf::Vector2f distance);
-  sf::Vector2f getPosition();
-  void setClassType(string classType/*,carddata & allcards*/);
-  void setPosition(sf::Vector2f Pos);
-  sf::FloatRect getGlobalBounds();
-  virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const;
-  void Onfight();
-  void Notfight();
-  void EnterBattle(Ennemy & ennemy);
+  void initialiseLife(int Vie);//initialisation of the life of the player
+  void deplacement(Floor & floor); //movement of the player
+  void move(sf::Vector2f distance); //move of the sprite
+  sf::Vector2f getPosition(); //return the position of the player
+  void setClassType(string classType/*,carddata & allcards*/); //define the class type
+  void setPosition(sf::Vector2f Pos); //define the position of the player
+  sf::FloatRect getGlobalBounds(); // return the global bounds of the player
+  virtual void draw(sf::RenderTarget & target, sf::RenderStates states) const; //draw the player
+  void Onfight();//put the player in fight
+  void Notfight();// put the player in platformer mode
+  void EnterBattle(Ennemy & ennemy); // use onfight and not fight when hitting the ennemy
 };
 #endif

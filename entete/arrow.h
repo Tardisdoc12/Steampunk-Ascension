@@ -10,7 +10,7 @@ private:
     bool activate;
     virtual void draw(sf::RenderTarget & target,sf::RenderStates states) const;
 public:
-    arrow();
+    arrow(); //to help the targetting of the ennemy with card
     void follow();
     void Stretching();
     //void Creation(sf::Event event);
